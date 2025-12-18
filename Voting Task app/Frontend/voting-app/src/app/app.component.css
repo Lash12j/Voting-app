@@ -1,0 +1,35 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: normal;
+  color: #000;
+}
+
+.tables-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.table-section {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .tables-row {
+    flex-direction: column;
+  }
+}
+
+
+
+

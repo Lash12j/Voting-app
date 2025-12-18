@@ -1,0 +1,16 @@
+<div class="vote-container">
+  <h3>Vote!</h3>
+  <div class="vote-form">
+    <select class="form-control vote-select" [(ngModel)]="selectedVoterId">
+      <option [ngValue]="null">I am</option>
+      <option *ngFor="let voter of voters" [ngValue]="voter.id">{{voter.name}}</option>
+    </select>
+
+    <select class="form-control vote-select" [(ngModel)]="selectedCandidateId">
+      <option [ngValue]="null">I vote for</option>
+      <option *ngFor="let candidate of candidates" [ngValue]="candidate.id">{{candidate.name}}</option>
+    </select>
+
+    <button class="btn btn-primary submit-btn" (click)="castVote()">Submit</button>
+  </div>
+</div>

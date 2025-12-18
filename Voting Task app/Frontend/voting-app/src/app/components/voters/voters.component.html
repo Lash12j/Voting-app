@@ -1,0 +1,28 @@
+<div class="voters-container">
+  <div class="header-row">
+    <h3>Voters</h3>
+    <button class="add-btn" (click)="toggleAddForm()" title="Add Voter">+</button>
+  </div>
+  <div class="add-form" *ngIf="showAddForm">
+    <input type="text" [(ngModel)]="newVoterName" placeholder="Voter name" class="form-control" (keyup.enter)="addVoter()">
+    <button class="btn btn-sm btn-primary mt-2" (click)="addVoter()">Add</button>
+    <button class="btn btn-sm btn-secondary mt-2 ml-2" (click)="toggleAddForm()">Cancel</button>
+  </div>
+  <table class="voters-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Has voted</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let voter of voters">
+        <td>{{voter.name}}</td>
+        <td>{{voter.hasVoted ? 'v' : 'x'}}</td>
+      </tr>
+      <tr *ngIf="voters.length === 0">
+        <td colspan="2" class="text-center">No voters yet</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
